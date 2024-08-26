@@ -1,11 +1,14 @@
+import 'package:flower_app/core/utilies/app_fonts.dart';
+import 'package:flower_app/featuer/home/presentation/controller/home_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../../core/utilies/app_colors.dart';
 import '../../../../../core/utilies/app_images.dart';
 
 class ItemGridWidget extends StatelessWidget {
-  const ItemGridWidget({super.key});
-
+  const ItemGridWidget({super.key, required this.index});
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -32,16 +35,38 @@ class ItemGridWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Image.asset(
-                  AppImages.singleDonuts,
+                  Provider.of<HomeProvider>(context).itemGridList[index].image,
                 width: 125,
                 height: 85,
               ),
               const SizedBox(height: 14,),
-              Text("Donuts"),
+              Text(
+                  Provider.of<HomeProvider>(context).itemGridList[index].title,
+                style: TextStyle(
+                  color: AppColors.brown,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 13
+                ),
+              ),
               const SizedBox(height: 5,),
-              Text("Flawor : Creamy"),
+              Text(
+                Provider.of<HomeProvider>(context).itemGridList[index].desc,
+                style: TextStyle(
+                    color: AppColors.grey,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: AppFonts.futuraBT,
+                    fontSize: 10
+                ),
+              ),
               const SizedBox(height: 10,),
-              Text("45. LE"),
+              Text(
+                "${Provider.of<HomeProvider>(context).itemGridList[index].price}. LE",
+                style: TextStyle(
+                    color: AppColors.brown,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 13
+                ),
+              ),
             ],
           ),
         ),
@@ -52,8 +77,11 @@ class ItemGridWidget extends StatelessWidget {
             backgroundColor: AppColors.white.withOpacity(0.7),
             foregroundColor: AppColors.brown,
             child: IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.favorite_border_outlined),
+              onPressed: (){
+                Provider.of<HomeProvider>(context,listen: false).favOrNot(index);
+              },
+              icon: Provider.of<HomeProvider>(context).itemGridList[index].favOrNot == true ?Icon(Icons.favorite)
+              :Icon(Icons.favorite_border_outlined),
             ),
           ),
         ),

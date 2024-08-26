@@ -1,9 +1,12 @@
 import 'package:flower_app/core/utilies/app_fonts.dart';
 import 'package:flower_app/featuer/splash/presentation/view/splash_screen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'featuer/home/presentation/controller/home_provider.dart';
 main(){
-  runApp(FlowerApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => HomeProvider(),
+      child: FlowerApp()));
 }
 class FlowerApp extends StatelessWidget {
   const FlowerApp({super.key});

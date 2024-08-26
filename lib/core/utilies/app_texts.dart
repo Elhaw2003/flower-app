@@ -14,4 +14,5 @@ Your Test""";
   static const String floreVitamin = "Flore vitamin";
   static const String spanishLatte = "Spanish latte";
   static const String chocolateDrinks = "Chocolate drinks";
+  static const String flaworCreamy = "Flawor : Creamy";
 }
