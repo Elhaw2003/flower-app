@@ -17,6 +17,7 @@ class SmoothControllor extends StatelessWidget {
           dotColor: AppColors.brown.withOpacity(0.2),
           dotHeight: 7,
           dotWidth: 7,
+          radius: 20,
           spacing: 6
       ),  // your preferred effect
     );

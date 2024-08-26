@@ -11,8 +11,8 @@ List <OnboardingModel> onboardingList = [
       title: AppTexts.donuts,
       description: AppTexts.descOnboarding,
       buttonText: AppTexts.next,
-      width: 228.17,
-      height: 111
+      imageWidth: 228.17,
+      imageHeight: 111
   ),
   OnboardingModel(
       cover: AppImages.onboarding2,
@@ -20,8 +20,8 @@ List <OnboardingModel> onboardingList = [
       title: AppTexts.pieceOfCake,
       description: AppTexts.descOnboarding,
       buttonText: AppTexts.next,
-      width: 237,
-      height: 183
+      imageWidth: 237,
+      imageHeight: 183
   ),
   OnboardingModel(
       cover: AppImages.onboarding3,
@@ -29,7 +29,7 @@ List <OnboardingModel> onboardingList = [
       title: AppTexts.milkshake,
       description: AppTexts.descOnboarding,
       buttonText: AppTexts.next,
-      width: 178,
-      height: 239.45
+      imageWidth: 178,
+      imageHeight: 239.45
   ),
 ];

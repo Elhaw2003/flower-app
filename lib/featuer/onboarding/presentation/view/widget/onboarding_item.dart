@@ -13,15 +13,14 @@ class OnboardingItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        const SizedBox(height: 40,),
         Image.asset(
           onboardingList[index].image,
-          width: onboardingList[index].width,
-          height: onboardingList[index].height,
+          width: onboardingList[index].imageWidth,
+          height: onboardingList[index].imageHeight,
         ),
-        const SizedBox(height: 10,),
+        const SizedBox(height: 20,),
         Text(
           onboardingList[index].title,
           style: TextStyle(
@@ -84,7 +83,8 @@ class OnboardingItem extends StatelessWidget {
         SizedBox(height: 30,),
         SmoothControllor(
             pageController: pageController,
-        )
+        ),
+        const SizedBox(height: 124,),
       ],
     );
   }

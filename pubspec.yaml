@@ -84,6 +84,15 @@ flutter:
     - family: Majalla
       fonts:
         - asset: assets/fonts/majalla.ttf
+    - family: Pangolin
+      fonts:
+        - asset: assets/fonts/Pangolin-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+    - family: Syne
+      fonts:
+        - asset: assets/fonts/Syne-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

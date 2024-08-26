@@ -5,8 +5,8 @@ class OnboardingModel{
   final String title;
   final String description;
   final String buttonText;
-  final double height;
-  final double width;
+  final double imageHeight;
+  final double imageWidth;
 
   OnboardingModel({
 
@@ -15,8 +15,8 @@ class OnboardingModel{
     required this.title,
     required this.description,
     required this.buttonText,
-    required this.height,
-    required this.width,
+    required this.imageHeight,
+    required this.imageWidth,
 
 });
 
