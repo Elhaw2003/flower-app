@@ -3,6 +3,8 @@ import 'package:flower_app/featuer/home/presentation/view/widget/item_list_widge
 import 'package:flower_app/featuer/home/presentation/view/widget/item_grid_widget.dart';
 import 'package:flower_app/featuer/home/presentation/view/widget/search_home_screen.dart';
 import 'package:flower_app/featuer/home/presentation/view/widget/see_all_widget.dart';
+import 'package:flower_app/featuer/search_category/presentation/view/search_category_screen.dart';
+import 'package:flower_app/featuer/see_all_item_grid/presentation/view/see_all_item_grid_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/home_provider.dart';
@@ -24,7 +26,13 @@ class HomeBody extends StatelessWidget {
               child: SizedBox(height: 20,),
           ),
           SliverToBoxAdapter(
-              child: SearchHomeScreen(),
+              child: SearchHomeScreen(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (c){
+                    return SearchCategoryScreen();
+                  }));
+                },
+              ),
           ),
           const SliverToBoxAdapter(
             child: SizedBox(height: 29,),
@@ -41,14 +49,21 @@ class HomeBody extends StatelessWidget {
           const SliverToBoxAdapter(
             child: SizedBox(height: 30,),
           ),
-          const SliverToBoxAdapter(
-            child: SeeAllWidget(text: AppTexts.bestSelling),
+           SliverToBoxAdapter(
+            child: SeeAllWidget(
+                text: AppTexts.bestSelling,
+              onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (c){
+                    return SeeAllItemGridScreen();
+                  }));
+              },
+            ),
           ),
           const SliverToBoxAdapter(
             child: SizedBox(height: 19,),
           ),
           SliverGrid.builder(
-            itemCount: Provider.of<HomeProvider>(context).itemGridList.length,
+            itemCount: 2,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing:MediaQuery.of(context).size.height*0.02,

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../core/utilies/app_colors.dart';
-import '../../../../../core/utilies/app_images.dart';
 
 class ItemGridWidget extends StatelessWidget {
   const ItemGridWidget({super.key, required this.index});
@@ -35,13 +34,13 @@ class ItemGridWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Image.asset(
-                  Provider.of<HomeProvider>(context).itemGridList[index].image,
+                  Provider.of<HomeProvider>(context).items[index].image,
                 width: 125,
                 height: 85,
               ),
               const SizedBox(height: 14,),
               Text(
-                  Provider.of<HomeProvider>(context).itemGridList[index].title,
+                  Provider.of<HomeProvider>(context).items[index].title,
                 style: TextStyle(
                   color: AppColors.brown,
                   fontWeight: FontWeight.w400,
@@ -50,7 +49,7 @@ class ItemGridWidget extends StatelessWidget {
               ),
               const SizedBox(height: 5,),
               Text(
-                Provider.of<HomeProvider>(context).itemGridList[index].desc,
+                Provider.of<HomeProvider>(context).items[index].desc,
                 style: TextStyle(
                     color: AppColors.grey,
                     fontWeight: FontWeight.w400,
@@ -60,7 +59,7 @@ class ItemGridWidget extends StatelessWidget {
               ),
               const SizedBox(height: 10,),
               Text(
-                "${Provider.of<HomeProvider>(context).itemGridList[index].price}. LE",
+                "${Provider.of<HomeProvider>(context).items[index].price}. LE",
                 style: TextStyle(
                     color: AppColors.brown,
                     fontWeight: FontWeight.w700,
@@ -78,9 +77,9 @@ class ItemGridWidget extends StatelessWidget {
             foregroundColor: AppColors.brown,
             child: IconButton(
               onPressed: (){
-                Provider.of<HomeProvider>(context,listen: false).favOrNot(index);
+                Provider.of<HomeProvider>(context,listen: false).updatefav(index);
               },
-              icon: Provider.of<HomeProvider>(context).itemGridList[index].favOrNot == true ?Icon(Icons.favorite)
+              icon: Provider.of<HomeProvider>(context).items[index].favOrNot == true ?Icon(Icons.favorite)
               :Icon(Icons.favorite_border_outlined),
             ),
           ),
@@ -103,7 +102,7 @@ class ItemGridWidget extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

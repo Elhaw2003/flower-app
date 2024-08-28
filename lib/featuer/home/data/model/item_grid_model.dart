@@ -1,8 +1,19 @@
+
+
+import 'package:hive/hive.dart';
+ part 'item_grid_model.g.dart';
+
+@HiveType(typeId: 0)
 class ItemGridModel {
-  final String image;
-  final String title;
-  final String desc;
-  final double price;
+  @HiveField(0)
+   String image;
+  @HiveField(1)
+   String title;
+  @HiveField(2)
+   String desc;
+  @HiveField(3)
+   double price;
+  @HiveField(4)
    bool favOrNot;
 
   ItemGridModel({

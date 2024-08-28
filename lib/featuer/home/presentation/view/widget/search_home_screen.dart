@@ -4,12 +4,12 @@ import '../../../../../core/utilies/app_colors.dart';
 import '../../../../../core/utilies/app_texts.dart';
 
 class SearchHomeScreen extends StatelessWidget {
-  const SearchHomeScreen({super.key});
-
+  const SearchHomeScreen({super.key, this.onTap});
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: onTap,
       child: Row(
         children: [
           Expanded(

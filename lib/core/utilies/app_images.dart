@@ -15,4 +15,9 @@ class AppImages{
   static const String spanishLatte = "assets/images/spanish_latte.png";
   static const String chocolateDrinks = "assets/images/chocolate_drinks.png";
   static const String singleDonuts = "assets/images/single_donuts.png";
+  static const String smallFlower = "assets/images/small_flower.png";
+  static const String oreoMilkshake = "assets/images/oreo_milkshake.png";
+  static const String vanillaMilkshake = "assets/images/vanilla_milkshake.png";
+  static const String chocolateMilkshake = "assets/images/chocolate_milkshake.png";
+  static const String mangoMilkshake = "assets/images/mango_milkshake.png";
 }
