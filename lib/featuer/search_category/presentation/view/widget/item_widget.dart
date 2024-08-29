@@ -64,8 +64,8 @@ class ItemWidget extends StatelessWidget {
                               const SizedBox(height: 4,),
                               Text(
                                 context.watch<ItemSearchProvider>().searchItemList.isEmpty?
-                                context.watch<ItemSearchProvider>().catigories[index].desc:
-                                context.watch<ItemSearchProvider>().searchItemList[index].desc,
+                                context.watch<ItemSearchProvider>().catigories[index].smallDesc:
+                                context.watch<ItemSearchProvider>().searchItemList[index].smallDesc,
                                 style: TextStyle(
                                     color: AppColors.brown.withOpacity(0.65),
                                     fontSize: 14,

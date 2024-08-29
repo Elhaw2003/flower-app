@@ -2,7 +2,8 @@ class ItemCategoryModel {
 
   String image;
   String title;
-  String desc;
+  String smallDesc;
+  String bigDesc;
   double price;
   int count;
 
@@ -11,9 +12,10 @@ class ItemCategoryModel {
 
     required this.image,
     required this.title,
-    required this.desc,
+    required this.smallDesc,
+    required this.bigDesc,
     required this.price,
-     this.count = 0,
+     this.count = 1,
 
 });
 

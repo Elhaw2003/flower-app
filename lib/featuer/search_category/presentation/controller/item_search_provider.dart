@@ -9,65 +9,29 @@ class ItemSearchProvider extends ChangeNotifier{
     ItemCategoryModel(
         image: AppImages.oreoMilkshake,
         title: AppTexts.oreoMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
+        smallDesc: AppTexts.smallDescSearchCategory,
+        bigDesc: AppTexts.bigDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.vanillaMilkshake,
         title: AppTexts.vanillaMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
+        smallDesc: AppTexts.smallDescSearchCategory,
+        bigDesc: AppTexts.bigDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.chocolateMilkshake,
         title: AppTexts.chocolateMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
+        smallDesc: AppTexts.smallDescSearchCategory,
+        bigDesc: AppTexts.bigDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.mangoMilkshake,
         title: AppTexts.mangoMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
-        price: 45),
-    ItemCategoryModel(
-        image: AppImages.oreoMilkshake,
-        title: AppTexts.oreoMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
-        price: 45),
-    ItemCategoryModel(
-        image: AppImages.vanillaMilkshake,
-        title: AppTexts.vanillaMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
-        price: 45),
-    ItemCategoryModel(
-        image: AppImages.chocolateMilkshake,
-        title: AppTexts.chocolateMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
-        price: 45),
-    ItemCategoryModel(
-        image: AppImages.mangoMilkshake,
-        title: AppTexts.mangoMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
-        price: 45),
-    ItemCategoryModel(
-        image: AppImages.oreoMilkshake,
-        title: AppTexts.oreoMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
-        price: 45),
-    ItemCategoryModel(
-        image: AppImages.vanillaMilkshake,
-        title: AppTexts.vanillaMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
-        price: 45),
-    ItemCategoryModel(
-        image: AppImages.chocolateMilkshake,
-        title: AppTexts.chocolateMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
-        price: 45),
-    ItemCategoryModel(
-        image: AppImages.mangoMilkshake,
-        title: AppTexts.mangoMilkshake,
-        desc: AppTexts.smallDescSearchCategory,
+        smallDesc: AppTexts.smallDescSearchCategory,
+        bigDesc: AppTexts.bigDescSearchCategory,
         price: 45),
   ];
-  
+
   List <ItemCategoryModel> searchItemList = [];//catch items in form field
   
   searchItemInFormField(value){
@@ -76,5 +40,20 @@ class ItemSearchProvider extends ChangeNotifier{
   }// catch items when search in form field
 
 
+
+
+plusCountItem(int index){
+
+    catigories[index].count+=1;
+    notifyListeners();
+}
+
+  minusCountItem(int index){
+
+    if(catigories[index].count > 0 ){
+      catigories[index].count-=1;
+    }
+    notifyListeners();
+  }
 
 }

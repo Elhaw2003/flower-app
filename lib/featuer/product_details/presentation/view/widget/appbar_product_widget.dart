@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../../core/utilies/app_colors.dart';
 import '../../../../../core/utilies/app_images.dart';
+import '../../../../search_category/presentation/controller/item_search_provider.dart';
 
 class AppbarProductWidget extends StatelessWidget {
-  const AppbarProductWidget({super.key});
-
+  const AppbarProductWidget({super.key, required this.index});
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -15,7 +17,7 @@ class AppbarProductWidget extends StatelessWidget {
           SizedBox(
             height:  MediaQuery.of(context).size.height*0.4,
             width: double.infinity,
-            child: Image.asset(AppImages.oreoMilkshake),
+            child: Image.asset(Provider.of<ItemSearchProvider>(context).catigories[index].image),
           ),
           Positioned(
             top: 50,
