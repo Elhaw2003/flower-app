@@ -27,4 +27,5 @@ he majority have""";
   static const String chocolateMilkshake = "Chocolate Milkshake";
   static const String mangoMilkshake = "Mango Milkshake";
   static const String strawberryMilkshake = "Strawberry Milkshake";
+  static const String addToCart = "Add to cart";
 }
