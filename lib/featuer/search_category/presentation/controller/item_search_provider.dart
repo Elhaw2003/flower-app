@@ -9,62 +9,62 @@ class ItemSearchProvider extends ChangeNotifier{
     ItemCategoryModel(
         image: AppImages.oreoMilkshake,
         title: AppTexts.oreoMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.vanillaMilkshake,
         title: AppTexts.vanillaMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.chocolateMilkshake,
         title: AppTexts.chocolateMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.mangoMilkshake,
         title: AppTexts.mangoMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.oreoMilkshake,
         title: AppTexts.oreoMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.vanillaMilkshake,
         title: AppTexts.vanillaMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.chocolateMilkshake,
         title: AppTexts.chocolateMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.mangoMilkshake,
         title: AppTexts.mangoMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.oreoMilkshake,
         title: AppTexts.oreoMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.vanillaMilkshake,
         title: AppTexts.vanillaMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.chocolateMilkshake,
         title: AppTexts.chocolateMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
     ItemCategoryModel(
         image: AppImages.mangoMilkshake,
         title: AppTexts.mangoMilkshake,
-        desc: AppTexts.descSearchCategory,
+        desc: AppTexts.smallDescSearchCategory,
         price: 45),
   ];
   
@@ -74,6 +74,7 @@ class ItemSearchProvider extends ChangeNotifier{
     searchItemList=catigories.where((element) => element.title.toLowerCase().contains(value.toLowerCase())).toList();
     notifyListeners();
   }// catch items when search in form field
+
 
 
 }

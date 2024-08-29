@@ -21,7 +21,7 @@ class SeeAllItemGridBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: GridView.builder(
-              itemCount: Provider.of<HomeProvider>(context).items.length,
+              itemCount: Provider.of<HomeProvider>(context).itemGridList.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing:MediaQuery.of(context).size.height*0.02,

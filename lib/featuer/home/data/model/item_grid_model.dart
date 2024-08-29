@@ -4,7 +4,8 @@ import 'package:hive/hive.dart';
  part 'item_grid_model.g.dart';
 
 @HiveType(typeId: 0)
-class ItemGridModel {
+class ItemGridModel extends HiveObject {
+  // دي حاجة بتخيني اقدر اعدل ع ال object ب save
   @HiveField(0)
    String image;
   @HiveField(1)

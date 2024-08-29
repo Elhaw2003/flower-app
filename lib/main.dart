@@ -20,13 +20,24 @@ main()async{
       ],
       child: FlowerApp()));
 }
-class FlowerApp extends StatelessWidget {
+class FlowerApp extends StatefulWidget {
   const FlowerApp({super.key});
 
   @override
+  State<FlowerApp> createState() => _FlowerAppState();
+}
+
+class _FlowerAppState extends State<FlowerApp> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Provider.of<HomeProvider>(context,listen: false).addToBox();
+
+  }
+  @override
   Widget build(BuildContext context) {
 
-    Provider.of<HomeProvider>(context,listen: false).getItemsFromBox();
     return MaterialApp(
       theme: ThemeData(
         fontFamily: AppFonts.roboto

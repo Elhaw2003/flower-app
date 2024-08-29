@@ -9,37 +9,32 @@ import '../../data/model/item_grid_model.dart';
 
 class HomeProvider extends ChangeNotifier {
   var boxItems =  Hive.box<ItemGridModel>(MyHive.itemsBox);
-  List<ItemGridModel> itemGridList = [
-
-      ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
-      ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
-
-  ];
-  List <ItemGridModel> items = [];// for get box
-  getItemsFromBox(){
-    items = boxItems.values.toList();//>> sorting in cashe....
-  }
-
-  updatefav(int index){
-    itemGridList[index].favOrNot = ! itemGridList[index].favOrNot;
+  List<ItemGridModel> itemGridList = [];
+  updatefav(int index) {
+    itemGridList[index].favOrNot = !itemGridList[index].favOrNot;
     boxItems.putAt(index, itemGridList[index]);
     notifyListeners();
   }
-
+  addToBox( ) {
+    if(boxItems.isEmpty) {
+      boxItems.addAll([
+        ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.singleDonuts, title: AppTexts.donuts, desc: AppTexts.flaworCreamy, price: 45),
+        ItemGridModel(image: AppImages.pieceOfCake, title: AppTexts.pieceOfCake, desc: AppTexts.flaworCreamy, price: 45),
+    ]);
+    }
+    itemGridList=boxItems.values.toList();
+    //  كدا بضيف كل الليست جوا لبوكس
+  }
 
 
 }

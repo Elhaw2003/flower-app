@@ -64,6 +64,7 @@ class HomeBody extends StatelessWidget {
           ),
           SliverGrid.builder(
             itemCount: 2,
+            // how ?   ??  ? ? ?? ?
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing:MediaQuery.of(context).size.height*0.02,

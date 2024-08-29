@@ -6,8 +6,12 @@ class AppTexts{
    with love""";
   static const String bannerDesc = """Choose What Suits  
 Your Test""";
-  static const String  descSearchCategory = """There are many variations of
+  static const String  smallDescSearchCategory = """There are many variations of
  passages of Lorem Ipsum""";
+  static const String bigDescSearchCategory = """There are many variations of passages of Lorem
+Ipsum available, he majority have There are many 
+variations of passages of Lorem Ipsum available, 
+he majority have""";
   static const String next = "Next";
   static const String searcHere = "search here  ..";
   static const String discovByCategory = "Discover by category";
