@@ -1,7 +1,6 @@
 import 'package:flower_app/featuer/search_category/presentation/controller/item_search_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../../../../core/utilies/app_colors.dart';
 import '../../../../../core/utilies/app_texts.dart';
 import '../../../../search_category/data/model/item_category_model.dart';

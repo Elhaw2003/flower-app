@@ -6,40 +6,34 @@ import 'package:flutter/cupertino.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class ItemSearchProvider extends ChangeNotifier{
-  var categoriesBox =  Hive.box<ItemCategoryModel>(MyHive.categoriesBox);
-  List <ItemCategoryModel> catigories = [];
-  addCategoriesListInBox(){
-    if(categoriesBox.isEmpty){
-      categoriesBox.addAll([
-        ItemCategoryModel(
-            image: AppImages.oreoMilkshake,
-            title: AppTexts.oreoMilkshake,
-            smallDesc: AppTexts.smallDescSearchCategory,
-            bigDesc: AppTexts.bigDescSearchCategory,
-            price: 45),
-        ItemCategoryModel(
-            image: AppImages.vanillaMilkshake,
-            title: AppTexts.vanillaMilkshake,
-            smallDesc: AppTexts.smallDescSearchCategory,
-            bigDesc: AppTexts.bigDescSearchCategory,
-            price: 45),
-        ItemCategoryModel(
-            image: AppImages.chocolateMilkshake,
-            title: AppTexts.chocolateMilkshake,
-            smallDesc: AppTexts.smallDescSearchCategory,
-            bigDesc: AppTexts.bigDescSearchCategory,
-            price: 45),
-        ItemCategoryModel(
-            image: AppImages.mangoMilkshake,
-            title: AppTexts.mangoMilkshake,
-            smallDesc: AppTexts.smallDescSearchCategory,
-            bigDesc: AppTexts.bigDescSearchCategory,
-            price: 45),
-      ]);
-    }
-    catigories = categoriesBox.values.toList();
-  }
-
+  // var categoriesBox =  Hive.box<ItemCategoryModel>(MyHive.categoriesBox);
+  var cartBox =  Hive.box<ItemCategoryModel>(MyHive.cartBox);
+  List <ItemCategoryModel> catigories = [
+    ItemCategoryModel(
+        image: AppImages.oreoMilkshake,
+        title: AppTexts.oreoMilkshake,
+        smallDesc: AppTexts.smallDescSearchCategory,
+        bigDesc: AppTexts.bigDescSearchCategory,
+        price: 45),
+    ItemCategoryModel(
+        image: AppImages.vanillaMilkshake,
+        title: AppTexts.vanillaMilkshake,
+        smallDesc: AppTexts.smallDescSearchCategory,
+        bigDesc: AppTexts.bigDescSearchCategory,
+        price: 45),
+    ItemCategoryModel(
+        image: AppImages.chocolateMilkshake,
+        title: AppTexts.chocolateMilkshake,
+        smallDesc: AppTexts.smallDescSearchCategory,
+        bigDesc: AppTexts.bigDescSearchCategory,
+        price: 45),
+    ItemCategoryModel(
+        image: AppImages.mangoMilkshake,
+        title: AppTexts.mangoMilkshake,
+        smallDesc: AppTexts.smallDescSearchCategory,
+        bigDesc: AppTexts.bigDescSearchCategory,
+        price: 45),
+  ];
   List <ItemCategoryModel> searchItemList = [];//catch items in form field
   searchItemInFormField(value){
     searchItemList=catigories.where((element) => element.title.toLowerCase().contains(value.toLowerCase())).toList();
@@ -47,41 +41,39 @@ class ItemSearchProvider extends ChangeNotifier{
   }// catch items when search in form field
   plusCountItemInCategoryList(int index){
     catigories[index].count+=1;
-    // categoriesBox.putAt(index, catigories[index]);
     notifyListeners();
 }
   minusCountItemInCategoryList(int index){
     if(catigories[index].count > 0 ){
       catigories[index].count-=1;
     }
-    // categoriesBox.putAt(index, catigories[index]);
     notifyListeners();
   }
   List<ItemCategoryModel> cartList = [];
+  addItemInCartInBox(){
+    cartList = cartBox.values.toList();
+  }
   addItemInCartList(index){
     cartList.add(index);
+    cartBox.add(index);
     notifyListeners();
   }
   plusCountItemInCartList(int index){
     catigories[index].count+=1;
-    // categoriesBox.putAt(index, catigories[index]);
     notifyListeners();
   }
   minusCountItemInCartList(int index){
     if(catigories[index].count > 0 ){
       catigories[index].count-=1;
     }
-    // categoriesBox.putAt(index, catigories[index]);
     notifyListeners();
   }
-
-
   removeItemInCartList(index){
-
     if(index >=0 && index < cartList.length){
       cartList.removeAt(index);
+      catigories[index].count = 0;
+      cartBox.deleteAt(index);
     }
     notifyListeners();
   }
-
 }

@@ -22,4 +22,5 @@ class AppImages{
   static const String mangoMilkshake = "assets/images/mango_milkshake.png";
   static const String myPrfile = "assets/images/my_profile.jpg";
   static const String doneImage = "assets/images/done_image.jpg";
+  static const String confirmSuccessfully = "assets/images/confirm_successfully.png";
 }

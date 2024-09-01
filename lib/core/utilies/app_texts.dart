@@ -35,4 +35,6 @@ he majority have""";
   static const String price = "Price";
   static const String confirm = "Confirm";
   static const String noItemsAddedInCart = "No Items Added In Cart";
+  static const String orderConfirmedSuccessfully = "Order confirmed successfully";
+  static const String backToHome = "Back to home";
 }
