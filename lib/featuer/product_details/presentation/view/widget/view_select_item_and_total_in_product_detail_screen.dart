@@ -1,11 +1,12 @@
 import 'package:flower_app/core/utilies/app_colors.dart';
+import 'package:flower_app/core/utilies/app_texts.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../search_category/presentation/controller/item_search_provider.dart';
 
-class ViewSelectItemAndTotal extends StatelessWidget {
-  const ViewSelectItemAndTotal({super.key, required this.index});
+class view_select_item_and_total_in_product_detail_screen extends StatelessWidget {
+  const view_select_item_and_total_in_product_detail_screen({super.key, required this.index});
   final int index;
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class ViewSelectItemAndTotal extends StatelessWidget {
         child: Row(
           children: [
             Expanded(child: Text(
-                "Selected items  (${Provider.of<ItemSearchProvider>(context).catigories[index].count})",
+                "${AppTexts.selectedItems}  (${Provider.of<ItemSearchProvider>(context).catigories[index].count})",
               style: TextStyle(
                 color: AppColors.brown,
                 fontSize: 15,
@@ -29,7 +30,7 @@ class ViewSelectItemAndTotal extends StatelessWidget {
             Expanded(
                 child: Text(
                     textAlign: TextAlign.end,
-                    "Total : "
+                    "${AppTexts.total} : "
                         "${Provider.of<ItemSearchProvider>(context).catigories[index].count *
                         Provider.of<ItemSearchProvider>(context).catigories[index].price}. LE",
                   style: TextStyle(

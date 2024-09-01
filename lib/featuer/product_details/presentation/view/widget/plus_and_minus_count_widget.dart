@@ -31,7 +31,7 @@ class PlusAndMinusCountWidget extends StatelessWidget {
               backgroundColor: AppColors.brown,
               child: IconButton(
                 onPressed: (){
-                  Provider.of<ItemSearchProvider>(context,listen: false).minusCountItem(index);
+                  Provider.of<ItemSearchProvider>(context,listen: false).minusCountItemInCategoryList(index);
                 },
                 icon: Icon(Icons.remove,color: AppColors.white,),
               ),
@@ -51,7 +51,7 @@ class PlusAndMinusCountWidget extends StatelessWidget {
               backgroundColor: AppColors.brown,
               child: IconButton(
                 onPressed: (){
-                  Provider.of<ItemSearchProvider>(context,listen: false).plusCountItem(index);
+                  Provider.of<ItemSearchProvider>(context,listen: false).plusCountItemInCategoryList(index);
                 },
                 icon: Icon(Icons.add,color: AppColors.white,),
               ),

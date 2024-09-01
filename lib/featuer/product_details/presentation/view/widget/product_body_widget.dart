@@ -1,6 +1,7 @@
 import 'package:flower_app/core/widget/custom_button.dart';
+import 'package:flower_app/featuer/product_details/presentation/view/widget/bottom_sheet_widget.dart';
 import 'package:flower_app/featuer/product_details/presentation/view/widget/plus_and_minus_count_widget.dart';
-import 'package:flower_app/featuer/product_details/presentation/view/widget/view_select_item_and_total.dart';
+import 'package:flower_app/featuer/product_details/presentation/view/widget/view_select_item_and_total_in_product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../../core/utilies/app_colors.dart';
@@ -64,9 +65,20 @@ class ProductBodyWidget extends StatelessWidget {
             SizedBox(height: 24.5,),
             PlusAndMinusCountWidget(index: index,),
             SizedBox(height: 77,),
-            ViewSelectItemAndTotal(index: index,),
+            view_select_item_and_total_in_product_detail_screen(index: index,),
             SizedBox(height: 16,),
-            CustomButton(title: AppTexts.addToCart)
+            CustomButton(
+                title: AppTexts.addToCart,
+                onTap: (){
+                  if (index >= 0 && index < Provider.of<ItemSearchProvider>(context, listen: false).catigories.length) {
+                    Provider.of<ItemSearchProvider>(context, listen: false).addItemInCartList(
+                        Provider.of<ItemSearchProvider>(context, listen: false).catigories[index]);
+                  }
+                 showModalBottomSheet(context: context, builder: (c){
+                   return BottomSheetWidget();
+                 });
+                },
+            )
           ],
         ),
       ),

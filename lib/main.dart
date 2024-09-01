@@ -9,10 +9,13 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 import 'package:provider/provider.dart';
 import 'featuer/home/presentation/controller/home_provider.dart';
+import 'featuer/search_category/data/model/item_category_model.dart';
 main()async{
   await Hive.initFlutter();
   Hive.registerAdapter(ItemGridModelAdapter());
-  await Hive.openBox<ItemGridModel>(MyHive.itemsBox);
+  Hive.registerAdapter(ItemCategoryModelAdapter());
+  await Hive.openBox<ItemGridModel>(MyHive.itemsGridBox);
+  await Hive.openBox<ItemCategoryModel>(MyHive.categoriesBox);
   runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider( create: (context) => HomeProvider(),),
@@ -33,6 +36,7 @@ class _FlowerAppState extends State<FlowerApp> {
     // TODO: implement initState
     super.initState();
     Provider.of<HomeProvider>(context,listen: false).addToBox();
+    Provider.of<ItemSearchProvider>(context,listen: false).addCategoriesListInBox();
 
   }
   @override

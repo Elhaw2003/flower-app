@@ -28,4 +28,11 @@ he majority have""";
   static const String mangoMilkshake = "Mango Milkshake";
   static const String strawberryMilkshake = "Strawberry Milkshake";
   static const String addToCart = "Add to cart";
+  static const String cart = "Cart";
+  static const String done = "Done";
+  static const String selectedItems = "Selected items";
+  static const String total = "Total";
+  static const String price = "Price";
+  static const String confirm = "Confirm";
+  static const String noItemsAddedInCart = "No Items Added In Cart";
 }

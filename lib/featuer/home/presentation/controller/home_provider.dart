@@ -8,7 +8,7 @@ import 'package:hive/hive.dart';
 import '../../data/model/item_grid_model.dart';
 
 class HomeProvider extends ChangeNotifier {
-  var boxItems =  Hive.box<ItemGridModel>(MyHive.itemsBox);
+  var boxItems =  Hive.box<ItemGridModel>(MyHive.itemsGridBox);
   List<ItemGridModel> itemGridList = [];
   updatefav(int index) {
     itemGridList[index].favOrNot = !itemGridList[index].favOrNot;

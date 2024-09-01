@@ -20,4 +20,6 @@ class AppImages{
   static const String vanillaMilkshake = "assets/images/vanilla_milkshake.png";
   static const String chocolateMilkshake = "assets/images/chocolate_milkshake.png";
   static const String mangoMilkshake = "assets/images/mango_milkshake.png";
+  static const String myPrfile = "assets/images/my_profile.jpg";
+  static const String doneImage = "assets/images/done_image.jpg";
 }
