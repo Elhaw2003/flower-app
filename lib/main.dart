@@ -15,7 +15,6 @@ main()async{
   Hive.registerAdapter(ItemGridModelAdapter());
   Hive.registerAdapter(ItemCategoryModelAdapter());
   await Hive.openBox<ItemGridModel>(MyHive.itemsGridBox);
-  await Hive.openBox<ItemCategoryModel>(MyHive.cartBox);
   runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider( create: (context) => HomeProvider(),),
@@ -37,7 +36,6 @@ class _FlowerAppState extends State<FlowerApp> {
     super.initState();
     Provider.of<HomeProvider>(context,listen: false).addToBox();
     // Provider.of<ItemSearchProvider>(context,listen: false).addCategoriesListInBox();
-    Provider.of<ItemSearchProvider>(context,listen: false).addItemInCartInBox();
   }
   @override
   Widget build(BuildContext context) {

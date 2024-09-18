@@ -7,7 +7,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class ItemSearchProvider extends ChangeNotifier{
   // var categoriesBox =  Hive.box<ItemCategoryModel>(MyHive.categoriesBox);
-  var cartBox =  Hive.box<ItemCategoryModel>(MyHive.cartBox);
   List <ItemCategoryModel> catigories = [
     ItemCategoryModel(
         image: AppImages.oreoMilkshake,
@@ -50,12 +49,8 @@ class ItemSearchProvider extends ChangeNotifier{
     notifyListeners();
   }
   List<ItemCategoryModel> cartList = [];
-  addItemInCartInBox(){
-    cartList = cartBox.values.toList();
-  }
   addItemInCartList(index){
     cartList.add(index);
-    cartBox.add(index);
     notifyListeners();
   }
   plusCountItemInCartList(int index){
@@ -72,7 +67,6 @@ class ItemSearchProvider extends ChangeNotifier{
     if(index >=0 && index < cartList.length){
       cartList.removeAt(index);
       catigories[index].count = 0;
-      cartBox.deleteAt(index);
     }
     notifyListeners();
   }
